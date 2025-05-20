@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECTRO STORE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .close-btn {
+            color: white;
+            font-size: 36px;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-weight: bold;
+        }
+
+        .sidebar .close-btn:hover {
+            color: #f44336;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+
+        .header .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .header .cart-icon {
+            font-size: 24px;
+        }
+
+        .header .search-icon {
+            font-size: 24px;
+        }
+
+        /* Product Grid Styles */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            width: calc(25% - 20px);
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card p {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .product-card .price {
+            color: #f44336;
+            font-weight: bold;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #f44336;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        footer .footer-links a:hover {
+            color: #f44336;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-content {
+                margin-left: 200px;
+            }
+
+            .product-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+            }
+
+            .sidebar a {
+                text-align: center;
+                padding: 12px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .product-card {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Shirts</a>
+        <a href="#">Dresses</a>
+        <a href="#">Jeans</a>
+        <a href="#">Jackets</a>
+        <a href="#">Gymwear</a>
+        <a href="#">Blazers</a>
+        <a href="#">Shoes</a>
+        <a href="#">Contact</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Subscribe</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo"></div>
+            <div>
+                <span class="cart-icon">&#128722;</span>
+                <span class="search-icon">&#128269;</span>
+            </div>
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Jeans">
+                <p>Ripped Skinny Jeans<br><span class="price">$24.99</span></p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Jeans">
+                <p>Mega Ripped Jeans<br><span class="price">$19.99</span></p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Jeans">
+                <p>Washed Skinny Jeans<br><span class="price">$20.50</span></p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250" alt="Jeans">
+                <p>Vintage Skinny Jeans<br><span class="price">$14.99</span></p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2025 Online Store | All Rights Reserved</p>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Support</a>
+                <a href="#">Contact</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script for Sidebar -->
+    <script>
+        // Open and close the sidebar
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>
