@@ -1,262 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELECTRO STORE</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Sidebar Styles */
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #333;
-            padding-top: 20px;
-            transition: 0.3s;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
 
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-            transition: 0.3s;
-        }
+  
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-        .sidebar a:hover {
-            background-color: #575757;
-        }
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
 
-        .sidebar .close-btn {
-            color: white;
-            font-size: 36px;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            font-weight: bold;
-        }
+    .navbar a:hover {
+      background-color: #575757;
+    }
 
-        .sidebar .close-btn:hover {
-            color: #f44336;
-        }
+    .navbar .right {
+      float: right;
+      background-color: teal;
+    }
 
-        /* Main content */
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
+  
+    .hero {
+      margin-top: 50px;
+      background: url("tecno.jpg.jpg") no-repeat center center/cover;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: whitesmoke;
+      text-align: center;
+    }
 
-        /* Header Styles */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 20px;
-            color: white;
-        }
+    .hero h1 {
+      font-size: 3rem;
+    }
 
-        .header .logo {
-            font-size: 30px;
-            font-weight: bold;
-        }
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+    }
 
-        .header .cart-icon {
-            font-size: 24px;
-        }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-        .header .search-icon {
-            font-size: 24px;
-        }
+    .section p {
+      margin-bottom: 15px;
+    }
 
-        /* Product Grid Styles */
-        .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .schedule {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .product-card {
-            width: calc(25% - 20px);
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+    .schedule div {
+      flex: 1;
+      min-width: 200px;
+      background: #eaeaea;
+      padding: 20px;
+      border-radius: 5px;
+    }
 
-        .product-card img {
-            width: 100%;
-            height: auto;
-        }
 
-        .product-card p {
-            padding: 10px;
-            font-size: 16px;
-        }
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        .product-card .price {
-            color: #f44336;
-            font-weight: bold;
-        }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
-        .product-card button {
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
 
-        .product-card button:hover {
-            background-color: #f44336;
-        }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+      margin-top: 40px;
+    }
 
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
 
-        footer .footer-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
 
-        footer .footer-links a:hover {
-            color: #f44336;
-        }
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 5px;
+      position: relative;
+    }
 
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .sidebar {
-                width: 200px;
-            }
+    .close {
+      color: black;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-            .main-content {
-                margin-left: 200px;
-            }
-
-            .product-card {
-                width: calc(50% - 20px);
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .sidebar {
-                width: 100%;
-                position: relative;
-            }
-
-            .sidebar a {
-                text-align: center;
-                padding: 12px;
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .product-card {
-                width: calc(100% - 20px);
-            }
-        }
-    </style>
+    @media (max-width: 600px) {
+      .schedule {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Sidebar Menu -->
-    <div class="sidebar" id="mySidebar">
-        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-        <a href="#">Shirts</a>
-        <a href="#">Dresses</a>
-        <a href="#">Jeans</a>
-        <a href="#">Jackets</a>
-        <a href="#">Gymwear</a>
-        <a href="#">Blazers</a>
-        <a href="#">Shoes</a>
-        <a href="#">Contact</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Subscribe</a>
+
+<div class="navbar">
+  <a href="#">HOME</a>
+  <a href="#overview">OVERVIEW</a>
+  <a href="#schedule">SCHEDULE</a>
+  <a href="#contact">CONTACT</a>
+  <a href="#" class="right" onclick="document.getElementById('registerModal').style.display='block'">REGISTER</a>
+</div>
+
+
+<div class="hero">
+  <h1>Upskill Your Future: Design, Tech & Innovation Workshop</h1>
+  <p>Learn. Create. Network.</p>
+</div>
+
+
+<div class="section" id="overview">
+  <h2>Workshop Overview</h2>
+  <p>Join our hands-on sessions on design, technology, and innovation. This workshop brings together experts, enthusiasts, and learners for an interactive experience.</p>
+  <p>Whether you're a beginner or advanced, you'll gain practical skills in design thinking, prototyping, tech tools, and networking strategies.</p>
+</div>
+
+
+<div class="section" id="schedule" style="background-color: #f9f9f9;">
+  <h2>Schedule</h2>
+  <div class="schedule">
+    <div>
+      <img src="icebreaker.jpg.jpg" alt="Day 1" style="width:100%; border-radius: 4px; margin-bottom: 10px;">
+      <h4>Day 1</h4>
+      <p>Introduction, Icebreakers, Design Basics</p>
     </div>
-
-    <!-- Main Content -->
-    <div class="main-content">
-
-        <!-- Header Section -->
-        <div class="header">
-            <div class="logo"></div>
-            <div>
-                <span class="cart-icon">&#128722;</span>
-                <span class="search-icon">&#128269;</span>
-            </div>
-        </div>
-
-        <!-- Product Section -->
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="Jeans">
-                <p>Ripped Skinny Jeans<br><span class="price">$24.99</span></p>
-                <button>Buy Now</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="Jeans">
-                <p>Mega Ripped Jeans<br><span class="price">$19.99</span></p>
-                <button>Buy Now</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="Jeans">
-                <p>Washed Skinny Jeans<br><span class="price">$20.50</span></p>
-                <button>Buy Now</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250" alt="Jeans">
-                <p>Vintage Skinny Jeans<br><span class="price">$14.99</span></p>
-                <button>Buy Now</button>
-            </div>
-        </div>
-
-        <!-- Footer Section -->
-        <footer>
-            <p>&copy; 2025 Online Store | All Rights Reserved</p>
-            <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Support</a>
-                <a href="#">Contact</a>
-                <a href="#">Terms & Conditions</a>
-            </div>
-        </footer>
+    <div>
+      <img src="tech.jpg.jpg" alt="Day 2" style="width:100%; border-radius: 4px; margin-bottom: 10px;">
+      <h4>Day 2</h4>
+      <p>Workshops, Tech Demonstration, Laboratory</p>
     </div>
+    <div>
+      <img src="aaa.jpg.jpg" alt="Day 3" style="width:100%; border-radius: 4px; margin-bottom: 10px;">
+      <h4>Day 3</h4>
+      <p>Showcase, Q&A, Certification</p>
+    </div>
+  </div>
+</div>
 
-    <!-- Script for Sidebar -->
-    <script>
-        // Open and close the sidebar
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-        }
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
-    </script>
+
+<div class="section" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-form">
+    <div style="flex: 1">
+      <p><strong>Email:</strong> upskillworkshop@gmail.com</p>
+      <p><strong>Phone:</strong> +63 9 7256 8956</p>
+    </div>
+    <div style="flex: 2">
+      <form>
+        <label>Name</label>
+        <input type="dhereck" required>
+        <label>Email</label>
+        <input type="dhereckdulguime@gmail.com" required>
+        <label>Message</label>
+        <textarea rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>© 2025 Creative Workshop</p>
+</div>
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('registerModal').style.display='none'">&times;</span>
+    <h2>Register for the Workshop</h2>
+    <form>
+      <label>Full Name</label>
+      <input type="Dhereckdulguime" required>
+      <label>Email</label>
+      <input type="Dhereckdulguime@gmail.com" required>
+      <label>Organization (optional)</label>
+      <input type="Data Analysis">
+      <button type="submit" style="margin-top: 10px;">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  window.onclick = function(event) {
+    const modal = document.getElementById('registerModal');
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
 </body>
 </html>
